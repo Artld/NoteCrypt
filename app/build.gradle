@@ -1,5 +1,24 @@
 apply plugin: 'com.android.application'
 
+// Signing configuration provided by command line arguments
+// Source: https://stackoverflow.com/a/34652052
+
+def getStore = { ->
+    return project.hasProperty('storeFile') ? storeFile : "null"
+}
+
+def getStorePassword = { ->
+    return project.hasProperty('storePassword') ? storePassword : ""
+}
+
+def getKeyAlias = { ->
+    return project.hasProperty('keyAlias') ? keyAlias : ""
+}
+
+def getKeyPassword = { ->
+    return project.hasProperty('keyPassword') ? keyPassword : ""
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -11,10 +30,29 @@ android {
         targetSdkVersion 25
     }
 
+    if (System.console() != null) {
+        // Building from console
+        signingConfigs {
+            release {
+                storeFile file(getStore())
+                storePassword getStorePassword()
+                keyAlias getKeyAlias()
+                keyPassword getKeyPassword()
+            }
+        }
+    }
+    else {
+        // Building from IDE's "Run" button
+        signingConfigs {
+            release {}
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+            signingConfig signingConfigs.release
         }
     }
 }
