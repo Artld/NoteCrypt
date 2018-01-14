@@ -31,7 +31,6 @@
     <string name="toast_errorCreatingDB">Error creating db.\nCheck the correctness of the path</string>
     <string name="toast_wrongNewPassword">Passwords do not match</string>
     <string name="toast_fieldsNotFilled">Fields do not filled correctly</string>
-    <string name="dialog_backNoSave">Your edit will not be saved.\nAre you sure to exit?</string>
     <string name="toast_success_newDB">Database successfully created</string>
     <string name="toast_success_changePsw">Password successfully changed</string>
     <string name="action_filter">Filter by Tag</string>
@@ -43,8 +42,6 @@
     <string name="toast_sort_alphabet">Alphabetical sort</string>
     <string name="toast_sort_creation">Creation sort</string>
     <string name="toast_success_deleteNote">Successfully deleted</string>
-    <string name="dialog_backClose">Really close the database?</string>
-    <string name="title_backClose">Close</string>
     <string name="toast_version">Notecrypt version</string>
     <string name="toast_createdBy">\nCreated by Ludovico de Nittis</string>
     <string name="toast_errorVersion">Error finding version!</string>

@@ -31,7 +31,6 @@
     <string name="toast_errorCreatingDB">DB の作成中にエラーが発生しました。\nパスが正しいか確認してください</string>
     <string name="toast_wrongNewPassword">パスワードが一致しません</string>
     <string name="toast_fieldsNotFilled">フィールドが正しく入力されていません</string>
-    <string name="dialog_backNoSave">編集内容は保存されません。\n終了してもよろしいですか?</string>
     <string name="toast_success_newDB">データベースを作成しました</string>
     <string name="toast_success_changePsw">パスワードを変更しました</string>
     <string name="action_filter">タグでフィルター</string>
@@ -43,8 +42,6 @@
     <string name="toast_sort_alphabet">アルファベット順に並び替え</string>
     <string name="toast_sort_creation">作成順に並び替え</string>
     <string name="toast_success_deleteNote">削除しました</string>
-    <string name="dialog_backClose">データベースを閉じてもよろしいですか?</string>
-    <string name="title_backClose">閉じる</string>
     <string name="toast_version">Notecrypt バージョン</string>
     <string name="toast_createdBy">\n作成者 Ludovico de Nittis</string>
     <string name="toast_errorVersion">バージョンの取得時にエラー!</string>

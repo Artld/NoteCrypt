@@ -4,7 +4,6 @@ import com.notecrypt.app.App;
 import com.notecrypt.utils.IDatabaseForNotes;
 import com.notecryptpro.R;
 
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -137,22 +136,13 @@ public class EditNoteActivity extends AppCompatActivity {
     }
 
     /*
-     * Create an AlertDialog if the user press the back button.
+     * Cancel without saving if the user press the back button.
      */
     @Override
     public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setMessage(R.string.dialog_backNoSave)
-                .setCancelable(false)
-                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                    public void onClick(final DialogInterface dialog, final int id) {
-                        final Intent intent = getIntent();
-                        setResult(RESULT_CANCELED, intent);
-                        finish();
-                    }
-                })
-                .setNegativeButton(android.R.string.cancel, null)
-                .show();
+        final Intent intent = getIntent();
+        setResult(RESULT_CANCELED, intent);
+        finish();
     }
 
     /**

@@ -31,7 +31,6 @@
     <string name="toast_errorCreatingDB">Errore durante la creazione del database.\nControllare la correttezza dell\'indirizzo</string>
     <string name="toast_wrongNewPassword">La Password non coincide</string>
     <string name="toast_fieldsNotFilled">Campi completati in modo non corretto</string>
-    <string name="dialog_backNoSave">Le modifiche effettuate verranno perse.\nSicuro di voler uscire?</string>
     <string name="toast_success_newDB">Database creato con successo</string>
     <string name="toast_success_changePsw">La Password è stata cambiata</string>
     <string name="action_filter">Filtra con i Tag</string>
@@ -43,8 +42,6 @@
     <string name="toast_sort_alphabet">Ordine alfabetico</string>
     <string name="toast_sort_creation">Ordine di creazione</string>
     <string name="toast_success_deleteNote">Eliminata con successo</string>
-    <string name="dialog_backClose">Chiudere il database?</string>
-    <string name="title_backClose">Chiudi</string>
     <string name="toast_version">Notecrypt versione</string>
     <string name="toast_createdBy">\nCreata da Ludovico de Nittis</string>
     <string name="toast_errorVersion">Errore nel trovare la versione!</string>

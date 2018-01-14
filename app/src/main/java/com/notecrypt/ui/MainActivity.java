@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements AsyncDelegate {
     }
 
     /*
-     * When the back button is pressed close the drawer layout if it was open or display an alert dialog
+     * When the back button is pressed close the drawer layout if it was open or close database
      * @see android.app.Activity#onBackPressed()
      */
     @Override
@@ -202,16 +202,7 @@ public class MainActivity extends AppCompatActivity implements AsyncDelegate {
             mDrawerList.performItemClick(mDrawerList, 0, mDrawerList.getItemIdAtPosition(0));
             mDrawerList.setSoundEffectsEnabled(true);
         } else {
-            new AlertDialog.Builder(this)
-                    .setMessage(R.string.dialog_backClose)
-                    .setTitle(R.string.title_backClose)
-                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                        public void onClick(final DialogInterface dialog, final int id) {
-                            finish();
-                        }
-                    })
-                    .setNegativeButton(android.R.string.no, null)
-                    .show();
+            finish();
         }
     }
 
