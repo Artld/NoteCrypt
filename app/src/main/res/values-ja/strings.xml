@@ -85,4 +85,6 @@
     <string name="localeWarning">パスワードは、アルファベット (A-Z)、数字、記号のみを使用することを強くお勧めします。</string>
     <string name="action_share">共有</string>
     <string name="explain_external_permission">Notecrypt は、メモを保存するために電話のメモリーを読み書きするアクセス許可が必要です。 恒久的に拒否した場合、システム設定->アプリ->NoteCrypt でこのアクセス許可を付与してください</string>
+    <string name="quick">Quick</string>
+    
 </resources>

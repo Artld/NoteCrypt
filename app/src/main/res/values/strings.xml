@@ -85,4 +85,6 @@
     <string name="localeWarning">It\'s high recommended to use as password only the Latin alphabet (A-Z), numbers and symbols.</string>
     <string name="action_share">Share</string>
     <string name="explain_external_permission">Notecrypt needs permission to read and write to the phone memory for store your notes. If you permanently denied it you can grant this permission opening your System Settings->Apps->NoteCrypt</string>
+    <string name="quick">Quick</string>
+    
 </resources>

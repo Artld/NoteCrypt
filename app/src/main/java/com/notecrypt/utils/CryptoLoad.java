@@ -32,6 +32,7 @@ public class CryptoLoad extends AsyncTask<Void, Integer, DatabaseForNotes> {
 
     private final String path;
     private String key;
+    private boolean quick;
     private Context mContext;
     private ProgressBar spinner; //optional
     private String toastOK; //optional
@@ -40,13 +41,15 @@ public class CryptoLoad extends AsyncTask<Void, Integer, DatabaseForNotes> {
     /**
      * Builder pattern with toast and spinner optional.
      *
-     * @param path where the database is located
-     * @param key  password
+     * @param path  where the database is located
+     * @param key   password
+     * @param quick is it necessary to quickly create a note
      */
-    private CryptoLoad(final String path, final String key, Context mContext) {
+    private CryptoLoad(final String path, final String key, boolean quick, Context mContext) {
         super();
         this.path = path;
         this.key = key;
+        this.quick = quick;
         this.mContext = mContext;
     }
 
@@ -58,6 +61,7 @@ public class CryptoLoad extends AsyncTask<Void, Integer, DatabaseForNotes> {
     public static class Builder {
         private final String path;
         private final String key;
+        private boolean quick;
         private Context mContext;
         private ProgressBar spinner; //null
         private String toastOK; //null
@@ -65,12 +69,14 @@ public class CryptoLoad extends AsyncTask<Void, Integer, DatabaseForNotes> {
         /**
          * Build the required fields.
          *
-         * @param path where the database is located
-         * @param key  password
+         * @param path  where the database is located
+         * @param key   password
+         * @param quick is it necessary to quickly create a note
          */
-        public Builder(final String path, final String key, Context mContext) {
+        public Builder(final String path, final String key, boolean quick, Context mContext) {
             this.path = path;
             this.key = key;
+            this.quick = quick;
             this.mContext = mContext;
         }
 
@@ -80,7 +86,7 @@ public class CryptoLoad extends AsyncTask<Void, Integer, DatabaseForNotes> {
          * @return instance of CryptoLoad
          */
         public CryptoLoad build() {
-            final CryptoLoad result = new CryptoLoad(path, key, mContext);
+            final CryptoLoad result = new CryptoLoad(path, key, quick, mContext);
             result.spinner = spinner;
             result.toastOK = toastOK;
             return result;
@@ -177,6 +183,7 @@ public class CryptoLoad extends AsyncTask<Void, Integer, DatabaseForNotes> {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("path", path);
             intent.putExtra("key", key);
+            intent.putExtra("quick", quick);
             App.setDatabase(db);
             this.mContext.startActivity(intent);
         }

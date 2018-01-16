@@ -85,5 +85,6 @@
     <string name="localeWarning">È altamente consigliato di usare come password solo l\'alfabeto latino (A-Z), numeri e simboli.</string>
     <string name="action_share">Condidivi</string>
     <string name="explain_external_permission">Notecrypt ha bisogno del permesso per leggere e scrivere sulla memoria del telefono per poter salvare le note. Se hai permanentemente negato questo permesso, puoi concederlo andando su Ipostazioni di Android->Applicazioni->Notecrypt</string>
-
+    <string name="quick">Quick</string>
+    
 </resources>

@@ -187,6 +187,9 @@ public class MainActivity extends AppCompatActivity implements AsyncDelegate {
                 }
             }
         };
+        if (intent.getBooleanExtra("quick", false)) {
+            onFabClicked(null); // Imitate click on "+" button
+        }
     }
 
     /*

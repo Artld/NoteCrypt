@@ -38,17 +38,17 @@ public class InsertPasswordDialogFragment extends DialogFragment {
                 .setView(view)
                 .setTitle(R.string.title_password)
                 .setCancelable(false)
+                .setNeutralButton(R.string.quick,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(final DialogInterface dialog, final int whichButton) {
+                                onPositiveOrNeutralClick(fieldEditText, whichButton);
+                            }
+                        }
+                )
                 .setPositiveButton(android.R.string.ok,
                         new DialogInterface.OnClickListener() {
                             public void onClick(final DialogInterface dialog, final int whichButton) {
-                                final String key = fieldEditText.getText().toString();
-                                if (key.equals("")) {
-                                    Toast.makeText(getActivity(), R.string.toast_emptyPassword, Toast.LENGTH_LONG).show();
-                                } else {
-                                    path = StringMethods.getInstance().fixPath(path);
-                                    new CryptoLoad.Builder(path, key, getActivity())
-                                            .build().execute();
-                                }
+                                onPositiveOrNeutralClick(fieldEditText, whichButton);
                             }
                         }
                 )
@@ -63,5 +63,17 @@ public class InsertPasswordDialogFragment extends DialogFragment {
                 .create();
         passwordDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         return passwordDialog;
+    }
+
+    private void onPositiveOrNeutralClick(final EditText fieldEditText, final int whichButton) {
+        final String key = fieldEditText.getText().toString();
+        if (key.equals("")) {
+            Toast.makeText(getActivity(), R.string.toast_emptyPassword, Toast.LENGTH_LONG).show();
+        } else {
+            path = StringMethods.getInstance().fixPath(path);
+            boolean quick = (whichButton == -3)? true : false; // NeutralButton has number -3
+            new CryptoLoad.Builder(path, key, quick, getActivity())
+                    .build().execute();
+        }
     }
 }
